@@ -1,5 +1,8 @@
-import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';import {Header} from "./components/Header";
+import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
+import {Header} from "./components/Header";
 import {Clients} from "./components/Clients";
+import {AddClientModal} from "./components/AddClientModal";
+
 
 
 // existing - incoming data. incoming - returned data
@@ -32,6 +35,7 @@ export const App = () => {
         <>
             <ApolloProvider client={client}>
                 <Header/>
+                <AddClientModal/>
                 <Clients/>
             </ApolloProvider>
         </>

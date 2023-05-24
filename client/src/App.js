@@ -1,6 +1,8 @@
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';import {Header} from "./components/Header";
 import {Clients} from "./components/Clients";
 
+
+// existing - incoming data. incoming - returned data
 const cache = new InMemoryCache({
     typePolicies: {
         Query: {

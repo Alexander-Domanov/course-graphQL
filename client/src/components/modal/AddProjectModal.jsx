@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { FaList } from 'react-icons/fa';
 import { useMutation, useQuery } from '@apollo/client';
 
-import { GET_PROJECTS } from '../queries/projectQueries';
-import { GET_CLIENTS } from '../queries/clientQueries';
-import {ADD_PROJECT} from "../mutations/projectMutations";
+import { GET_PROJECTS } from '../../queries/projectQueries';
+import { GET_CLIENTS } from '../../queries/clientQueries';
+import {ADD_PROJECT} from "../../mutations/projectMutations";
 
 export const AddProjectModal  = () => {
     const [name, setName] = useState('')
@@ -23,7 +23,7 @@ export const AddProjectModal  = () => {
         },
     })
 
-    // Get Clients for select
+    // Get client-home for select
     const {loading, error, data} = useQuery(GET_CLIENTS);
 
     const onSubmit = (e) => {

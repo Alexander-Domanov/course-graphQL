@@ -1,7 +1,9 @@
 import { FaEnvelope, FaPhone, FaIdBadge } from 'react-icons/fa';
 
 export const ClientInfo = ({ client }) => {
-    console.log(client)
+
+    if(!client) return <p>Something Went Wrong</p>
+
     return (
         <>
             <h5 className='mt-5'>Client Information</h5>

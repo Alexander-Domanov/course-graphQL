@@ -39,9 +39,9 @@ const projects = [
             'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu.',
         status: 'In Progress',
     },
-];
+]
 
-// Clients
+// client-home
 const clients = [
     {
         id: '1',
@@ -73,6 +73,6 @@ const clients = [
         email: 'bruce@gmail.com',
         phone: '321-468-8887',
     },
-];
+]
 
-module.exports = {projects, clients};
+module.exports = {projects, clients}

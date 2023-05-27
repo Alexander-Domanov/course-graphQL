@@ -1,6 +1,6 @@
 import {useQuery} from "@apollo/client";
-import {GET_PROJECTS} from "../queries/projectQueries";
-import {Spinner} from "./Spinner";
+import {GET_PROJECTS} from "../../queries/projectQueries";
+import {Spinner} from "../../ui/Spinner";
 import {ProjectCard} from "./PorjectCard";
 
 export const Projects = () => {

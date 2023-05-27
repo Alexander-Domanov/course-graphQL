@@ -1,4 +1,4 @@
-import logo from './assets/logo.png'
+import logo from '../components/assets/logo.png'
 
 export const Header = () => {
     return (

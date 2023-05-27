@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { FaTrash } from 'react-icons/fa';
-import { DELETE_PROJECT } from '../mutations/projectMutations';
-import { GET_PROJECTS } from '../queries/projectQueries';
+import { DELETE_PROJECT } from '../../mutations/projectMutations';
+import { GET_PROJECTS } from '../../queries/projectQueries';
 import { useMutation } from '@apollo/client';
 
 export const DeleteProjectButton = ({ projectId }) => {
@@ -19,5 +19,5 @@ export const DeleteProjectButton = ({ projectId }) => {
                 <FaTrash className='icon' /> Delete Project
             </button>
         </div>
-    );
+    )
 }

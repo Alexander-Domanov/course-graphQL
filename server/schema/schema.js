@@ -11,7 +11,7 @@ const {
     GraphQLEnumType,
 } = require('graphql')
 
-// Project Type
+// project-view Type
 const ProjectType = new GraphQLObjectType({
     name: 'Project',
     fields: () => ({
@@ -52,20 +52,20 @@ const RootQuery = new GraphQLObjectType({
             type: ProjectType,
             args: { id: { type: GraphQLID } },
             resolve(parent, args) {
-                return Project.findById(args.id);
+                return Project.findById(args.id)
             },
         },
         clients: {
             type: new GraphQLList(ClientType),
             resolve(parent, args) {
-                return Client.find();
+                return Client.find()
             },
         },
         client: {
             type: ClientType,
             args: { id: { type: GraphQLID } },
             resolve(parent, args) {
-                return Client.findById(args.id);
+                return Client.findById(args.id)
             },
         },
     },
@@ -88,9 +88,9 @@ const mutation = new GraphQLObjectType({
                     name: args.name,
                     email: args.email,
                     phone: args.phone,
-                });
+                })
 
-                return client.save();
+                return client.save()
             },
         },
         // Delete a client
@@ -103,8 +103,8 @@ const mutation = new GraphQLObjectType({
                 Project.find({ clientId: args.id }).then((projects) => {
                     projects.forEach((project) => {
                         project.deleteOne();
-                    });
-                });
+                    })
+                })
 
                 return Client.findByIdAndRemove(args.id);
             },
@@ -134,9 +134,9 @@ const mutation = new GraphQLObjectType({
                     description: args.description,
                     status: args.status,
                     clientId: args.clientId,
-                });
+                })
 
-                return project.save();
+                return project.save()
             },
         },
         // Delete a project
@@ -146,7 +146,7 @@ const mutation = new GraphQLObjectType({
                 id: { type: GraphQLNonNull(GraphQLID) },
             },
             resolve(parent, args) {
-                return Project.findByIdAndRemove(args.id);
+                return Project.findByIdAndRemove(args.id)
             },
         },
         // Update a project

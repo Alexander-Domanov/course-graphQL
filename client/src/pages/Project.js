@@ -1,15 +1,15 @@
 import {Link, useParams} from "react-router-dom";
-import {Spinner} from "../components/Spinner";
+import {Spinner} from "../ui/Spinner";
 import {useQuery} from "@apollo/client";
 import {GET_PROJECT} from "../queries/projectQueries";
-import {ClientInfo} from "../components/ClientInfo";
-import {DeleteProjectButton} from "../components/DeleteProjectButton";
+import {DeleteProjectButton} from "../components/project-view/DeleteProjectButton";
+import {EditProjectForm} from "../components/project-view/EditProjectForm";
+import {ClientInfo} from "../components/project-view/ClientInfo";
 
 export const Project = () => {
     const { id } = useParams()
     const { loading, error, data } = useQuery(GET_PROJECT, { variables: { id } })
-console.log(id)
-    console.log(data)
+
     if (loading) return <Spinner />
     if (error) return <p>Something Went Wrong</p>
     return (
@@ -23,8 +23,8 @@ console.log(id)
                     <p>{data.project.description}</p>
                     <h5 className='mt-3'>Project Status</h5>
                     <p className='lead'>{data.project.status}</p>
-                    {/*<ClientInfo client={data.project.client} />*/}
-                    {/*<EditProjectForm project={data.project} />*/}
+                    <ClientInfo client={data.project.client} />
+                    <EditProjectForm project={data.project} />
                     <DeleteProjectButton projectId={data.project.id} />
                 </div>
             )}

@@ -2,7 +2,7 @@ import {ApolloProvider, ApolloClient, InMemoryCache} from '@apollo/client';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
 import {NotFound} from "./pages/NotFound";
-import {Header} from "./components/Header";
+import {Header} from "./ui/Header";
 import {Project} from "./pages/Project";
 
 

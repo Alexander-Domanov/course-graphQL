@@ -5,9 +5,9 @@ import {ADD_CLIENT} from '../mutations/clientMutations';
 import {GET_CLIENTS} from '../queries/clientQueries';
 
 export const AddClientModal = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [phone, setPhone] = useState('')
 
     const [addClient] = useMutation(ADD_CLIENT, {
         variables: {name, email, phone},
@@ -23,17 +23,17 @@ export const AddClientModal = () => {
     })
 
     const onSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
 
         if (name === '' || email === '' || phone === '') {
-            return alert('Please fill in all fields');
+            return alert('Please fill in all fields')
         }
 
-        addClient(name, email, phone);
+        addClient(name, email, phone)
 
-        setName('');
-        setEmail('');
-        setPhone('');
+        setName('')
+        setEmail('')
+        setPhone('')
     };
 
     return (
